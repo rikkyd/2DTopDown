@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 
-[CreateAssetMenu(fileName = "Input Handler", menuName = "Input Handler")]
+[CreateAssetMenu(fileName = "InputHandler", menuName = "Input Handler")]
 public class InputHandler : ScriptableObject, CustomInput.IGameplayActions
 {
+    public UnityAction<Vector2> OnSetDirectionAction;
+
     private CustomInput input;
 
     private void OnEnable()
@@ -22,12 +25,14 @@ public class InputHandler : ScriptableObject, CustomInput.IGameplayActions
 
     private void OnDisable()
     {
-        // Cleanup code to be executed when the component is disabled
+        input.Gameplay.Disable();
     }
 
     public void OnSetDirection(InputAction.CallbackContext context)
     {
-        // Implement the desired behavior for handling the "Set Direction" input action
-        Debug.Log("set direction");
+        if (context.phase == InputActionPhase.Performed || context.phase == InputActionPhase.Canceled)
+        {
+            OnSetDirectionAction?.Invoke(context.ReadValue<Vector2>());
+        }
     }
 }

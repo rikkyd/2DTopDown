@@ -1,19 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "Input Handler", menuName = "Input Handler")]
+
+[RequireComponent(typeof(Moveable))]
 public class PlayerController : MonoBehaviour
 {
     public InputHandler inputHandler;
-    // Start is called before the first frame update
-    void Start()
+    private Moveable moveable;
+
+    void Awake() 
     {
-        
+        moveable = GetComponent<Moveable>();
+    }
+    void Start() 
+    {
+   
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update() 
     {
-        
+
+    }
+
+    private void OnSetDirection(Vector2 direction) 
+    {
+     //Debug.Log("test 123" + direction);
+     moveable.setDirection(direction);
+    }
+
+    private void OnEnable() 
+    {
+    inputHandler.OnSetDirectionAction += OnSetDirection;
+    }
+
+    private void OnDisable() 
+    {
+        inputHandler.OnSetDirectionAction -= OnSetDirection;
     }
 }
