@@ -33,7 +33,18 @@ public class GameManager : MonoBehaviour
 
     private void spawnPlayer()
     {
-        Instantiate(playerPrefab);
+        if (playerPrefab != null)
+        {
+        
+            activePlayer = Instantiate(playerPrefab);
+
+            
+            activePlayer.transform.position = Vector3.zero; 
+        }
+        else
+        {
+            Debug.LogWarning("Player prefab is not assigned in the GameManager!");
+        }
     }
     public Vector3 getPlayerPosition() 
     {
