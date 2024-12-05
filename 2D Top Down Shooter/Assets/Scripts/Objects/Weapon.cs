@@ -1,29 +1,58 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
-{
+public class Weapon : MonoBehaviour {
     public float fireRate;
+    public List<float> fireRateModifiers;
     public PoolObjectType type;
+
     private float timer = 0;
 
-    void Start()
+    void Start() 
     {
+        fireRateModifiers = new List<float>();
     }
 
-    void Update()
+    void Update() 
     {
-        timer = timer - Time.deltaTime > 0 ? timer - Time.deltaTime : 0f;
+        timer = timer - Time.deltaTime > 0 ? timer - Time.deltaTime : 0;
     }
 
-    public void shoot()
+    internal void addFireRateModifier(float modifier) 
     {
-        if (timer == 0f)
+        fireRateModifiers.Add(modifier);
+    }
+
+    internal void removeFireRateModifier(float modifier) 
+    {
+        fireRateModifiers.Remove(modifier);
+    }
+
+    public void shoot() 
+    {
+        if (timer == 0) 
         {
-            //Debug.Log("tembak");
             ObjectPool.GetInstance().requestObject(type).activate(transform.position, transform.rotation);
-            timer = fireRate;
+            timer = fireRate / getFireRateModifier();
         }
+    }
+
+    private float getFireRateModifier() 
+    {
+        float mod = 1;
+
+        foreach (float f in fireRateModifiers) 
+        {
+            mod += f;
+        }
+
+    return mod;
+    }
+
+    internal void clearModifier() 
+    {
+        fireRateModifiers.Clear();
     }
 }

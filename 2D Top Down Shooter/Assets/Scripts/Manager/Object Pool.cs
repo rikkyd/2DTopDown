@@ -30,7 +30,7 @@ public class ObjectPool : MonoBehaviour
         {
             foreach (GameObject go in prefabs)
             {
-                poolObjects.Add(Instantiate(go).GetComponent<PoolObject>());
+                poolObjects.Add(Instantiate(go,transform).GetComponent<PoolObject>());
             }
         }
     }
@@ -54,5 +54,13 @@ public class ObjectPool : MonoBehaviour
     public static ObjectPool GetInstance() 
     {
         return instance;
+    }
+
+    public void deactivateAllObjects() 
+    {
+        foreach (PoolObject po in poolObjects) 
+        {
+            po.deactivate();
+        }
     }
 }

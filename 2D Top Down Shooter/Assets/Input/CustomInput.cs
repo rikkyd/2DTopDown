@@ -28,9 +28,18 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             ""id"": ""f258300f-22e2-454f-bade-9e9be7e652b3"",
             ""actions"": [
                 {
-                    ""name"": ""SetDirection"",
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""6052e93a-a166-48eb-a10b-85a1d3b09cde"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""29edbb23-bfd6-4f68-95c5-d4f98e057d0c"",
+                    ""id"": ""5f74793e-831d-46b5-a70f-72b38e04e7e3"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -39,112 +48,68 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""0e403886-d6ea-4a26-bc8c-f4dd35088ae9"",
+                    ""name"": """",
+                    ""id"": ""0dc4ae43-a780-4f73-8a01-989441f734ac"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""f8ee3920-b45f-455a-9416-5d7245835989"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SetDirection"",
+                    ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""317f01b4-841f-4e0a-9c58-92e395ed67a2"",
+                    ""id"": ""64c29336-81b0-46b6-89df-a9ebfbe71787"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SetDirection"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""99c15d88-7949-4a14-93de-1eb12ffcaa4c"",
+                    ""id"": ""897bcd9a-c75c-4274-8dcc-0af492025632"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SetDirection"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""dc7b6a54-ee22-4818-b532-08fa73da6da2"",
+                    ""id"": ""1cac644b-f9e3-41b0-8a08-b846ee8c114a"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SetDirection"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""1e51049f-df84-4600-ab7a-a9b337c001a3"",
+                    ""id"": ""6eae8e54-1b2d-49a9-8272-6f3d187518b9"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SetDirection"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""ArrowKey"",
-                    ""id"": ""f0596998-a030-4864-9631-ad594f862a31"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SetDirection"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""90bd7db9-02dc-4bac-9378-4d799e2a7596"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SetDirection"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""77e9b1b0-f230-4925-b2ea-a4bc755f0d6f"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SetDirection"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""e94bbe44-5242-4e27-8278-4f4a48d5ff4f"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SetDirection"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""8e15822b-a55d-422d-a49c-be9f60ac0892"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SetDirection"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -155,7 +120,8 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
 }");
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_SetDirection = m_Gameplay.FindAction("SetDirection", throwIfNotFound: true);
+        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
     }
 
     ~@CustomInput()
@@ -222,12 +188,14 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     // Gameplay
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_Gameplay_SetDirection;
+    private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_Move;
     public struct GameplayActions
     {
         private @CustomInput m_Wrapper;
         public GameplayActions(@CustomInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SetDirection => m_Wrapper.m_Gameplay_SetDirection;
+        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -237,16 +205,22 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
-            @SetDirection.started += instance.OnSetDirection;
-            @SetDirection.performed += instance.OnSetDirection;
-            @SetDirection.canceled += instance.OnSetDirection;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
         {
-            @SetDirection.started -= instance.OnSetDirection;
-            @SetDirection.performed -= instance.OnSetDirection;
-            @SetDirection.canceled -= instance.OnSetDirection;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -266,6 +240,7 @@ public partial class @CustomInput: IInputActionCollection2, IDisposable
     public GameplayActions @Gameplay => new GameplayActions(this);
     public interface IGameplayActions
     {
-        void OnSetDirection(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }

@@ -30,11 +30,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable() 
     {
-    inputHandler.OnSetDirectionAction += OnSetDirection;
+    inputHandler.OnMoveAction += OnSetDirection;
     }
 
     private void OnDisable() 
     {
-        inputHandler.OnSetDirectionAction -= OnSetDirection;
+        inputHandler.OnMoveAction -= OnSetDirection;
     }
 }
